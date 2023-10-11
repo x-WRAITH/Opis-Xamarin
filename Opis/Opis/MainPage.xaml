@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Opis.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Labels -->
+        <Label Grid.Row="0" Grid.Column="0" Text="Imię" VerticalTextAlignment="Center" />
+        <Label Grid.Row="1" Grid.Column="0" Text="Nazwisko" VerticalTextAlignment="Center" />
+        <Label Grid.Row="2" Grid.Column="0" Text="Numer telefonu" VerticalTextAlignment="Center" />
+        <Label Grid.Row="3" Grid.Column="0" Text="Data urodzenia" VerticalTextAlignment="Center" />
+        <Label Grid.Row="4" Grid.Column="0" Text="Płeć" VerticalTextAlignment="Center" />
+        <Label Grid.Row="5" Grid.Column="0" Text="Województwo" VerticalTextAlignment="Center" />
+        <Label Grid.Row="6" Grid.Column="0" Text="Miasto" VerticalTextAlignment="Center" />
+        <Label Grid.Row="7" Grid.Column="0" Text="Zainteresowania" VerticalTextAlignment="Center" />
+
+        <!-- Buttons -->
+        <Button Grid.Row="10" Grid.Column="1" x:Name="buttonPhoto" Text="Dodaj zdjęcie" Clicked="Button_Clicked_Photo" />
+        <Button Grid.Row="11" Grid.Column="1" Text="Zatwierdz" Clicked="Button_Clicked" />
+        
+        <!-- Image-->
+        <Image x:Name="photo" Grid.Row="12" Grid.Column="1"/>
+
+        <!-- Inputs -->
+        <Entry Grid.Row="0" Grid.Column="1" x:Name="firstName" Keyboard="Text" Placeholder="np. Wojciech" TextChanged="TextChanged" />
+        <Entry Grid.Row="1" Grid.Column="1" x:Name="lastName" Keyboard="Text" Placeholder="np. Nowak" TextChanged="TextChanged" />
+        <Entry Grid.Row="2" Grid.Column="1" x:Name="phoneNumber" Keyboard="Telephone" Placeholder="np. 123456789" MaxLength="9" />
+        <DatePicker Grid.Row="3" Grid.Column="1" x:Name="datePicker" />
+
+        <!-- Radio -->
+        <StackLayout Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+            <RadioButton x:Name="radio1" Content="Kobieta" VerticalOptions="Start" HorizontalOptions="Start" />
+            <RadioButton x:Name="radio2" IsChecked="True" Content="Mężczyzna" VerticalOptions="Start" HorizontalOptions="Start" />
+        </StackLayout>
+
+        <!-- Województwo Picker -->
+        <Picker Grid.Row="5" Grid.Column="1" x:Name="wojewodztwoPicker" Title="Wybierz Województwo" SelectedIndexChanged="picker_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>Małopolskie</x:String>
+                <x:String>Śląskie</x:String>
+                <x:String>Świętokrzyskie</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <!-- Miasto Picker  -->
+        <Picker Grid.Row="6" Grid.Column="1" x:Name="miastoPicker" Title="Wybierz Miasto" IsVisible="false">
+        </Picker>
+
+        <!-- Interests Checkboxes -->
+        <StackLayout Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
+            <Label Text="Muzyka" VerticalTextAlignment="Center" />
+            <CheckBox x:Name="muzyka" Color="Red" />
+        </StackLayout>
+        <StackLayout Grid.Row="8" Grid.Column="1" Orientation="Horizontal">
+            <Label Text="Taniec" VerticalTextAlignment="Center" />
+            <CheckBox x:Name="taniec" Color="Blue" />
+        </StackLayout>
+        <StackLayout Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
+            <Label Text="Programowanie" VerticalTextAlignment="Center" />
+            <CheckBox x:Name="programowanie" Color="Purple" />
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
